@@ -32,7 +32,7 @@ Deno.serve(async (req: Request) => {
         return new Response(null, {
             status: 301,
             headers: {
-                "location": "https://github.com/qr.s3i7h.dev",
+                "location": "https://github.com/s3i7h/qr.s3i7h.dev",
             }
         });
     }
