@@ -12,7 +12,8 @@ Deno.serve(async (req: Request) => {
         url = ""
     }
 
-    const page = `<!doctype html>
+    if (url) {
+        const page = `<!doctype html>
 <html>
 <head><title>${url}</title></head>
 <body>
@@ -20,11 +21,18 @@ Deno.serve(async (req: Request) => {
 </body>
 </html>
 `
-
-    return new Response(page, {
-        status: 200,
-        headers: {
-            "content-type": "text/html",
-        },
-    });
+    
+        return new Response(page, {
+            status: 200,
+            headers: {
+                "content-type": "text/html",
+            },
+        });
+    } else {
+        return new Response(null, {
+            status: 301,
+            headers: {
+                "location": "https://github.com/qr.s3i7h.dev",
+            });
+    }
 });
