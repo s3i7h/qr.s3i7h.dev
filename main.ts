@@ -33,6 +33,7 @@ Deno.serve(async (req: Request) => {
             status: 301,
             headers: {
                 "location": "https://github.com/qr.s3i7h.dev",
-            });
+            }
+        });
     }
 });
